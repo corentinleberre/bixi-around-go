@@ -16,5 +16,5 @@ func main() {
 		lon, _ := strconv.ParseFloat(c.DefaultQuery("lon", "-73.567253"), 64)
 		c.JSON(http.StatusOK, bixiLogic(city, int(nbResult), lat, lon))
 	})
-	router.Run(":3000")
+	router.Run()
 }

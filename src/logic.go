@@ -27,7 +27,7 @@ func bixiLogic(city string, nbResult int, lat, lon float64) []StationAround {
 			Id:          station.StationID,
 			Name:        station.Name,
 			Coordinates: stationCoordinates,
-			Distance:    int(distance(lat, lon, station.Lat, station.Lon, "K") * 1000)}
+			Distance:    int(getDistanceInMeters(lat, lon, station.Lat, station.Lon))}
 	})
 
 	sort.SliceStable(stationArounds, func(i, j int) bool {
